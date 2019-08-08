@@ -2,9 +2,12 @@
   "name": "react-native-markdown-renderer",
   "version": "3.2.8",
   "description": "Markdown renderer for react-native, with CommonMark spec support + adds syntax extensions & sugar (URL autolinking, typographer).",
-  "main": "src/index.js",
+  "main": "build/index.js",
   "types": "src/index.d.ts",
-  "scripts": {},
+  "scripts": {
+    "build": "babel src --out-dir build",
+    "prepublishOnly": "npm run build"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mientjan/react-native-markdown-renderer.git"
@@ -35,7 +38,13 @@
     "react-native": "^0.50.4"
   },
   "devDependencies": {
+    "@babel/cli": "7.5.5",
+    "@babel/core": "7.5.5",
+    "@babel/plugin-proposal-class-properties": "7.5.5",
+    "@babel/preset-react": "7.0.0",
     "chokidar": "^2.0.0",
-    "fs-extra": "^5.0.0"
+    "fs-extra": "^5.0.0",
+    "react": "^16.2.0",
+    "react-native": "^0.50.4"
   }
 }
